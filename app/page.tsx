@@ -1,3 +1,4 @@
+import DialogBlog from "@/components/DialogBlog";
 import FormBlog from "@/components/FormBlog";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
