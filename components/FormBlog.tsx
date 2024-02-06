@@ -26,36 +26,39 @@ const FormBlog = () => {
 
         console.log(values);
 
-        const response = await axios.post("/api/get-blogs",values);
+        // const response = await axios.post("/api/get-blogs",values);
 
-        console.log(response.data);
+        // console.log(response.data);
     }
 
     return (
-        <div>
 
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
 
-                    <FormField
-                        control={form.control}
-                        name="url"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>
-                                    Website Name
-                                </FormLabel>
-                                <FormControl>
-                                    <Input placeholder='URL' {...field} />
-                                </FormControl>
-                            </FormItem>
-                        )}
-                    />
+                <FormField
+                    control={form.control}
+                    name="url"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>
+                                Website Name
+                            </FormLabel>
+                            <FormControl>
+                                <Input placeholder='URL' {...field} />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
 
+                <div className='flex gap-2'>
                     <Button type='submit'>Listen</Button>
-                </form>
-            </Form>
-        </div>
+                    <DialogBlog />
+                    {/* <Button type='button'> Click Me!!</Button> */}
+                </div>
+            </form>
+        </Form>
+
     )
 }
 

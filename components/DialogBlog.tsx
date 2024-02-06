@@ -7,26 +7,28 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { Button } from './ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
+import FormDialog from '@/components/FormDialog'
+
 
 
 const DialogBlog = () => {
     return (
         <Dialog>
-            <DialogTrigger>
-                <Button variant="secondary">Open</Button>
+            <DialogTrigger >
+                <div className={buttonVariants({ size: "default", variant: "ghost" })}>
+                    Open
+                </div>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
-                    <DialogTitle>Are you absolutely sure?</DialogTitle>
+                    <DialogTitle>Set your OpenAI API Key</DialogTitle>
                     <DialogDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
+                        <FormDialog />
                     </DialogDescription>
                 </DialogHeader>
             </DialogContent>
         </Dialog>
-
     )
 }
 
